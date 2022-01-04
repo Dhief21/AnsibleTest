@@ -1,39 +1,43 @@
-$# AnsibleTest
+# AnsibleTest
 #Teste de Conhecimentos
 
-# Executei o comando abaixo para instalar um repositorio externo e habilitar pacotes para depois instalar o ansible
+# Executei o comando abaixo para instalar um repositório externo e habilitar pacotes para depois instalar o ansible
+
 yum install epel-release -y
 
 # apos instalar o repositorio instalei o ansible
 
 yum install ansible -y
 
-# Também estudei que pode-se criar arquivos com listas de ips de servidores, tanto no etc/ansible/hosts quanto criar um arquivo de inventario e dentro dele colocar os ips dos 
-# hosts por exemplo criar uma lista de um park de máquinas
+# Também estudei que pode-se criar arquivos com listas de ips de servidores, tanto no etc/ansible/hosts quanto criar um arquivo de inventário e dentro dele colocar os ips dos 
+# hosts por exemplo criar uma lista de um park de máquinas;
 
-Exemplo
-#Criar arquivo chamado inventoryLIst com a lista de ip dos servers com o comando
+#Exemplo
+
+#Criar arquivo chamado inventoryLIst com a lista de ip dos servers
 
 vim invetoryList
 
 192.168.1.3 
+
 192.168.1.4 
 
-#ou pode-se editar o arquivo /etc/ansible/hosts criando um grupo de maquinas ou lista de serves exemplo datacenter_serasa
+#ou pode-se editar o arquivo /etc/ansible/hosts criando um grupo de máquinas ou lista de serves exemplo datacenter_serasa
 
 vim /etc/ansible/hosts
 
 [datacenter_serasa]
 192.168.1.3
+
 192.168.1.5
 
-#Pesquisei e pode-se executar comandos ansible AD HOC ou via playbook , em ad hoc é a execução do comando passando os parametros e os modulos (ja existem muitos modulos ja criados que pode-se usar) , já via playbook é um arquivo de configuracao para orquestrar uma ou mais tafefas.
+#Pesquisei e pode-se executar comandos ansible AD HOC ou via playbook , em ad hoc é a execução do comando passando os parametros e os modulos (ja existem muitos modulos ja criados na documentação do ansible que pode-se usar) , já via playbook é um arquivo de configuração para orquestrar uma ou mais tafefas.
 
 # 1 - Ansible
 # Utilizando o Ansible pedimos que desenvolva códigos para solucionar os seguintes cenários:
 # A.	Efetuar a alteração de IP, máscara de sub rede e gateway em servidores Linux e Windows
 
-# com ad hoc executei o seguinte comando para mudar o ip do server linux
+# via ad hoc executei o seguinte comando para mudar o ip do server linux
 
 ansible -i /home/dhief/inventoryList 192.168.1.3 -m nmcli -a "conn_name=enp0s3  ifname=enp0s3 type=ethernet ip4=192.168.1.11/24 gw4=192.168.1.1 state=present "  -k
 
@@ -41,7 +45,7 @@ ansible -i /home/dhief/inventoryList 192.168.1.3 -m nmcli -a "conn_name=enp0s3  
 
 ansible-playbook -e "host=192.168.1.3 ip_class=192.168.1.25/24 gat=192.168.1.1" changeNetwork.yml -k
 
-# Para esta tarefa no Windows usando playbook com o modulo winrm no arquivo  changeNetworkwin.yml anexo no git
+# Para esta tarefa no Windows usando playbook com o modulo winrm no arquivo changeNetworkwin.yml anexo no git
 
 #Para gerar um certificado pode-se usar OpenSSL ou PowerShell usando o New-SelfSignedCertificate cmdlet ou ainda Active Directory Certificate Services
 
