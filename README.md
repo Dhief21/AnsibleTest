@@ -26,6 +26,7 @@ vim invetoryList
 vim /etc/ansible/hosts
 
 [datacenter_serasa]
+
 192.168.1.3
 
 192.168.1.5
