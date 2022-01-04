@@ -20,6 +20,4 @@
         ansible_winrm_cert_key_pem: '{{certificado_chave}}'
         ansible_become: yes
         ansible_become_method: runas
-        ansible_become_user: dcuser
-        ansible_become_pass: dcuser_pwd
         ansible_become_flags: logon_type=new_credentials logon_flags=netcredentials_only
