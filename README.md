@@ -10,7 +10,7 @@ yum install epel-release -y
 yum install ansible -y
 
 # Também estudei que pode-se criar arquivos com listas de ips de servidores, tanto no etc/ansible/hosts quanto criar um arquivo de inventário e dentro dele colocar os ips dos 
-# hosts por exemplo criar uma lista de um park de máquinas;
+# hosts por exemplo criar uma lista de um park de máquinas.
 
 #Exemplo
 
@@ -31,7 +31,7 @@ vim /etc/ansible/hosts
 
 192.168.1.5
 
-#Pesquisei e pode-se executar comandos ansible AD HOC ou via playbook , em ad hoc é a execução do comando passando os parametros e os modulos (ja existem muitos modulos ja criados na documentação do ansible que pode-se usar) , já via playbook é um arquivo de configuração para orquestrar uma ou mais tafefas.
+#Pesquisei e pode-se executar comandos ansible AD HOC ou via playbook , ad hoc é a execução do comando passando os parametros e os módulos (já existem muitos módulos criados na documentação do ansible que pode-se usar) , já via playbook é um arquivo de configuração para orquestrar uma ou mais tafefas.
 
 # 1 - Ansible
 # Utilizando o Ansible pedimos que desenvolva códigos para solucionar os seguintes cenários:
@@ -45,7 +45,7 @@ ansible -i /home/dhief/inventoryList 192.168.1.3 -m nmcli -a "conn_name=enp0s3  
 
 ansible-playbook -e "host=192.168.1.3 ip_class=192.168.1.25/24 gat=192.168.1.1" changeNetwork.yml -k
 
-# Para esta tarefa no Windows usando playbook com o modulo winrm no arquivo changeNetworkwin.yml anexo no git
+# Para esta tarefa no Windows usando playbook com o módulo winrm no arquivo changeNetworkwin.yml anexo no git
 
 #Para gerar um certificado pode-se usar OpenSSL ou PowerShell usando o New-SelfSignedCertificate cmdlet ou ainda Active Directory Certificate Services
 
