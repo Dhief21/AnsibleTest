@@ -31,11 +31,11 @@ vim /etc/ansible/hosts
 
 192.168.1.5
 
-#Pesquisei e pode-se executar comandos ansible AD HOC ou via playbook , ad hoc é a execução do comando passando os parametros e os módulos (já existem muitos módulos criados na #documentação do ansible que pode-se usar) , já via playbook é um arquivo de configuração para orquestrar uma ou mais tafefas.
-
 # 1 - Ansible
 # Utilizando o Ansible pedimos que desenvolva códigos para solucionar os seguintes cenários:
 # A.	Efetuar a alteração de IP, máscara de sub rede e gateway em servidores Linux e Windows
+
+#Pesquisei e pode-se executar comandos ansible AD HOC ou via playbook , ad hoc é a execução do comando passando os parametros e os módulos (já existem muitos módulos criados na #documentação do ansible que pode-se usar) , já via playbook é um arquivo de configuração para orquestrar uma ou mais tafefas.
 
 # via ad hoc executei o seguinte comando para mudar o ip do server linux
 
