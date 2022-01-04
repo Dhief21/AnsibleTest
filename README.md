@@ -9,8 +9,7 @@ yum install epel-release -y
 
 yum install ansible -y
 
-# Também estudei que pode-se criar arquivos com listas de ips de servidores, tanto no etc/ansible/hosts quanto criar um arquivo de inventário e dentro dele colocar os ips dos 
-# hosts por exemplo criar uma lista de um park de máquinas.
+# Também estudei que pode-se criar arquivos com listas de ips de servidores, tanto no etc/ansible/hosts quanto criar um arquivo de inventário e dentro dele colocar os ips.
 
 #Exemplo
 
@@ -31,7 +30,7 @@ vim /etc/ansible/hosts
 
 192.168.1.5
 
-#Pesquisei e pode-se executar comandos ansible AD HOC ou via playbook , ad hoc é a execução do comando passando os parametros e os módulos (já existem muitos módulos criados na documentação do ansible que pode-se usar) , já via playbook é um arquivo de configuração para orquestrar uma ou mais tafefas.
+#Pesquisei e pode-se executar comandos ansible AD HOC ou via playbook , ad hoc é a execução do comando passando os parametros e os módulos (já existem muitos módulos criados na #documentação do ansible que pode-se usar) , já via playbook é um arquivo de configuração para orquestrar uma ou mais tafefas.
 
 # 1 - Ansible
 # Utilizando o Ansible pedimos que desenvolva códigos para solucionar os seguintes cenários:
