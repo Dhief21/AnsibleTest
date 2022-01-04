@@ -19,7 +19,8 @@ vim invetoryList
 192.168.1.3 
 192.168.1.4 
 
-ou pode-se editar o arquivo /etc/ansible/hosts criando um grupo de maquinas ou lista de serves nesse caso nomeiei de datacenter_serasa
+#ou pode-se editar o arquivo /etc/ansible/hosts criando um grupo de maquinas ou lista de serves exemplo datacenter_serasa
+
 vim /etc/ansible/hosts
 
 [datacenter_serasa]
