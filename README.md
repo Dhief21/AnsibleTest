@@ -54,9 +54,13 @@ ansible-playbook -e "win_server=192.168.1.4 ip_class=192.168.1.40/24 gat=192.168
 
 # Para esta tarefa utilizei playbook que com ele é possivel orquestrar as tarefas em uma sequencia por exemplo:
 #instalar repositorio do zabbix
+
 #Instalar zabbix-agent
+
 #Obter o terceiro octeto da faixa de ip
+
 #Condicional de acordo o terceiro octeto obtido configurar o parametro server dentro do /etc/zabbix/zabbix_agentd.conf
+
 #Reiniciar o serviço do zabbix-agent
 
 ansible-playbook -e host=localhost installzabbix.yml -k
