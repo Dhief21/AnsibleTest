@@ -8,7 +8,7 @@ yum install epel-release -y
 
 yum install ansible -y
 
-# Tambem estudei que pode-se criar arquivos com listas de ips de servidores, tanto no etc/ansible/hosts quanto criar um arquivo de inventario e dentro dele colocar os ips dos 
+# Também estudei que pode-se criar arquivos com listas de ips de servidores, tanto no etc/ansible/hosts quanto criar um arquivo de inventario e dentro dele colocar os ips dos 
 # hosts por exemplo criar uma lista de um park de máquinas
 
 Exemplo
