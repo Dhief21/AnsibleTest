@@ -14,17 +14,17 @@ yum install ansible -y
 # Tambem estudei que pode-se cruar arquivos com listas de ips de servidores, tanto no etc/ansible/hosts quanto criar um arquivo de inventario pelo vim inventorylist e dentro dele colocar os ips dos hosts
 
 Exemplo
-#criei um arquivo chamado inventoryLIst com a lista de ip dos servers com o comando
+# um arquivo chamado inventoryLIst com a lista de ip dos servers com o comando
 vim invetoryList
 
-192.168.1.3 #linux
-192.168.1.4 #windows
+192.168.1.3 
+192.168.1.4 
 
 ou podese editar o arquivo /etc/ansible/hosts criando um grupo de maquinas ou lista de serves nesse caso nomeiei de datacenter_serasa
 vim /etc/ansible/hosts
 [datacenter_serasa]
 192.168.1.3
-192.168.1.4
+192.168.1.5
 
 #Pesquisei e pode-se executar comandos ansible AD HOC ou via playbook , em ad hoc é a execução do comando passando os parametros e os modulos (ja existem muitos modulos ja criados que pode-se usar) , já via playbook é um arquivo de configuracao para orquestrar uma ou mais  tafefas ou "plays" como é chamado.
 
