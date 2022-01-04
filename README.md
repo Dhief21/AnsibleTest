@@ -5,7 +5,7 @@
 
 yum install epel-release -y
 
-# apos instalar o repositorio instalei o ansible
+# após instalar o repositorio instalei o ansible
 
 yum install ansible -y
 
