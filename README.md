@@ -34,24 +34,24 @@ vim /etc/ansible/hosts
 # A.	Efetuar a alteração de IP, máscara de sub rede e gateway em servidores Linux e Windows
 
 # com ad hoc executei o seguinte comando para mudar o ip do server linux
-#comando
+
 ansible -i /home/dhief/inventoryList 192.168.1.3 -m nmcli -a "conn_name=enp0s3  ifname=enp0s3 type=ethernet ip4=192.168.1.11/24 gw4=192.168.1.1 state=present "  -k
 
 # ou via playbook o arquivo changeNetwork.yml esta anexo no git
-#comando
+
 ansible-playbook -e "host=192.168.1.3 ip_class=192.168.1.25/24 gat=192.168.1.1" changeNetwork.yml -k
 
 #Para esta tarefa no Windows usando playbook com o modulo winrm no arquivo  changeNetworkwin.yml anexo no git
-#comando
-ansible-playbook -e "win_server=192.168.1.4 ip_class=192.168.1.40/24 gat=192.168.1.1" changeNetworkwin.yml -k
+
+ansible-playbook -e "win_server=192.168.1.4 ip_class=192.168.1.40/24 gat=192.168.1.1" certificado= certificado_chave= changeNetworkwin.yml -k
 
 # B.	Instalação e configuração
 # o	Instalar zabbix-agent 
 # o	Criar uma condicional para preencher o parâmetro “Server” com diferentes valores no arquivo de configuração, baseado no terceiro octeto do IP, onde está sendo instalado zabbix-agent 
 
-# Para esta tarefa utilizei playbook que com ele é possivel orquestrar as tarefas por exemplo primeiro instalar repositorio do zabbix depois instalar , pegar o terceiro octeto  #da faixa de ip e de acordo com a faixa mudar o parametro server dentro do /etc/zabbix/zabbix_agentd.conf e depois reiniciar o serviço do zabbix-agent
+# Para esta tarefa utilizei playbook que com ele é possivel orquestrar as tarefas por exemplo primeiro instalar repositorio do zabbix depois instalar , pegar o terceiro octeto  # da faixa de ip e de acordo com a faixa mudar o parametro server dentro do /etc/zabbix/zabbix_agentd.conf e depois reiniciar o serviço do zabbix-agent
 
-#comando
+
 ansible-playbook -e host=localhost installzabbix.yml -k
 
 #segue anexo o arquivo no git installzabbix.yml
