@@ -57,9 +57,9 @@ ansible-playbook -e host=localhost installzabbix.yml -k
 #segue anexo o arquivo no git installzabbix.yml
 
 
-#2 - Identificação de problemas
-#No seguinte cenário, foi executado o playbook RequestCert.yml, cujo retorno está a abaixo. Identifique o erro.
-#Execução:
+# 2 - Identificação de problemas
+# No seguinte cenário, foi executado o playbook RequestCert.yml, cujo retorno está a abaixo. Identifique o erro.
+# Execução:
 ansible-playbook RequestCert.yml --extra-vars 'domain= PLAINTEXT host_ip=PLAINTEXT ansible_fqdn=PLAINTEXT hostname=PLAINTEXT’ 
 
 #Analisando o erro apresentado , eu Primeiro valido se existe uma regra no firewall para a porta , segundo se o servidor for mesmo linux , o erro de conexão deve-se ao executar #o modelo winrm (modulo para windows para um servidor Linux "serasa.linux"), ou seja uma conexao windows para um server linux, ja sendo windows verificaria o certificado. 
