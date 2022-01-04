@@ -84,6 +84,14 @@ ansible-playbook RequestCert.yml --extra-vars 'domain= PLAINTEXT host_ip=PLAINTE
 #Se a conexão for para um servidor windows com nome de linux eu verificaria regras de firewal, serviço do winrm e configurações de certificados e utilizar o módulo files do #windows disponivel na doc do ansible exemplo: https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_file_module.html.
 
 
+#Analisando o erro apresentado, eu validaria os seguintes itens: A conexão é mesmo para um servidor linux? caso seja, o erro é de conexão devido utilizar o modulo winrm (módulo #para windows para um servidor Linux "serasa.linux"), deve-se também remover as variáveis de conexão do windows.   
+#Se a conexão é mesmo para um servidor windows com nome de linux eu verificaria regras de firewal, serviço de winrm no servidores de destino e configurações de certificados, #nesse caso o módulo deveria ser um para windows o win_file disponível no doc do ansible.
+
+#exemplo:
+
+https://docs.ansible.com /ansible/latest/collections/ansible/windows/win_file_module.html .
+
+
 
 
 
