@@ -1,0 +1,49 @@
+---
+- hosts: '{{host}}'
+  gather_facts: yes
+  tasks:
+    - name: configurar repositorio zabbix
+      yum:
+        state: present
+        name: http://repo.zabbix.com/zabbix/3.2/rhel/7/x86_64/zabbix-release-3.2-1.el7.noarch.rpm
+
+    - name: instalacao zabbix
+      yum:
+        name: zabbix-agent
+        state: present
+      ignore_errors: yes
+
+    - name: obter octeto ip
+      set_fact:
+        octeto_ip_terceiro: "{{ansible_default_ipv4.address.split('.')[2]}}"
+
+    - debug:
+        var: octeto_ip_terceiro
+
+
+    - name: mudar parametro server do arquivo zabbix zabbixserver01
+      lineinfile:
+        path: /etc/zabbix/zabbix_agentd.conf
+        regexp: '^Server='
+        line: Server=zabbixserver01
+      when: octeto_ip_terceiro == '1'
+
+    - name: mudar parametro server do arquivo zabbix zabbixserver02
+      lineinfile:
+        path: /etc/zabbix/zabbix_agentd.conf
+        regexp: '^Server='
+        line: Server=zabbixserver02
+      when: octeto_ip_terceiro == '0'
+
+    - name: mudar parametro server do arquivo zabbix zabbixserver03
+      lineinfile:
+        path: /etc/zabbix/zabbix_agentd.conf
+        regexp: '^Server='
+        line: Server=zabbixserver03
+      when: octeto_ip_terceiro == '2'
+
+    - name: restart agent
+      service:
+        name: zabbix-agent
+        state: restarted
+        enabled: yes

@@ -1,0 +1,25 @@
+---
+- hosts: localhost
+  gather_facts: yes
+  tasks:
+    - name: change ip network
+      delegate_to: '{{win_server}}'
+      nmcli:
+        conn_name: enp0s3
+        ifname: enp0s3
+        type: ethernet
+        ip4: '{{ip_class}}'
+        gw4: '{{gat}}'
+        state: present
+      vars:
+        ansible_port: 5986
+        ansible_connection: winrm
+        ansible_winrm_server_cert_validation: ignore
+        ansible_winrm_transport: certificate
+        ansible_winrm_cert_pem: '{{certificado}}'
+        ansible_winrm_cert_key_pem: '{{certificado_chave}}'
+        ansible_become: yes
+        ansible_become_method: runas
+        ansible_become_user: dcuser
+        ansible_become_pass: dcuser_pwd
+        ansible_become_flags: logon_type=new_credentials logon_flags=netcredentials_only

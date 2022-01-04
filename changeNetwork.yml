@@ -1,0 +1,13 @@
+---
+- hosts: '{{host}}'
+  gather_facts: yes
+  tasks:
+    - name: change ip network
+      nmcli:
+        conn_name: enp0s3
+        ifname: enp0s3
+        type: ethernet
+        ip4: '{{ip_class}}'
+        gw4: '{{gat}}'
+        state: present
+~
