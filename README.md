@@ -42,6 +42,8 @@ ansible-playbook -e "host=192.168.1.3 ip_class=192.168.1.25/24 gat=192.168.1.1" 
 
 # Para esta tarefa no Windows usando playbook com o modulo winrm no arquivo  changeNetworkwin.yml anexo no git
 
+#Para gerar um certificado pode-se usar PowerShell, usando o cmdlet New-SelfSignedCertificate
+
 ansible-playbook -e "win_server=192.168.1.4 ip_class=192.168.1.40/24 gat=192.168.1.1" certificado=/path/to/certificate/public/key.pem certificado_chave=/path/to/certificate/private/key.pem changeNetworkwin.yml -k
 
 # B.	Instalação e configuração
